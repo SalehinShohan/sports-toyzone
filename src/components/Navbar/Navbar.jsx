@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from '../../assets/logo.png';
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   return (
@@ -25,50 +25,45 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <a>Home</a>
+              <Link to='/'>Home</Link>
             </li>
             <li tabIndex={0}>
-              <a className="justify-between">
-              All Toys
-                
-              </a>
-              
+              <Link className="justify-between">All Toys</Link>
             </li>
             <li>
-              <a>My Toys</a>
+              <Link>My Toys</Link>
             </li>
             <li>
-              <a>Add A Toy</a>
+              <Link>Add A Toy</Link>
             </li>
             <li>
-              <a>Blogs</a>
+              <Link>Blogs</Link>
             </li>
           </ul>
         </div>
-        <Link to='/' className="btn btn-ghost normal-case text-xl">
-            <img className="w-12" src={logo} alt="" />
+        <Link to="/" className="btn btn-ghost normal-case text-xl">
+          <img className="w-12" src={logo} alt="" />
         </Link>
-        <h1 className="text-white text-3xl font-bold">Sports <span className="text-success">ToyZone</span> </h1>
+        <h1 className="text-white text-3xl font-bold">
+          Sports <span className="text-success">ToyZone</span>{" "}
+        </h1>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Home</a>
+            <Link to='/'>Home</Link>
           </li>
           <li tabIndex={0}>
-            <a>
-            All Toys
-            </a>
-            
+            <Link>All Toys</Link>
           </li>
           <li>
-            <a>My Toys</a>
+            <Link>My Toys</Link>
           </li>
           <li>
-            <a>Add A Toy</a>
+            <Link>Add A Toy</Link>
           </li>
           <li>
-            <a>Blogs</a>
+            <Link>Blogs</Link>
           </li>
         </ul>
       </div>
