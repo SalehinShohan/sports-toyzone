@@ -1,0 +1,23 @@
+[
+    {
+        "_id": "01",
+        "name": "Audi mx-2023",
+        "img": "https://assetscdn1.paytm.com/images/catalog/product/K/KI/KIDKINSMART-AUDPEEK20818792C1798D/1564596473295_0..jpg",
+        "price": "20",
+        "rating": "5"
+    },
+    {
+        "_id": "02",
+        "name": "Truck Lori 2022",
+        "img": "https://assets.kogan.com/images/kg-electronic/KXG-02744/1-31272bb880-02744.jpg?auto=webp&bg-color=fff&canvas=340%2C226&fit=bounds&height=226&quality=75&width=340",
+        "price": "21",
+        "rating": "5"
+    },
+    {
+        "_id": "03",
+        "name": "Police Car",
+        "img": "https://c8.alamy.com/comp/HF01AR/toy-police-car-and-police-officer-HF01AR.jpg",
+        "price": "21",
+        "rating": "5"
+    }
+]
