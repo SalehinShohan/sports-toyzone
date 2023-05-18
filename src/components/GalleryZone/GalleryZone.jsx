@@ -3,15 +3,16 @@ import GalleryCard from "./GalleryCard";
 
 const GalleryZone = () => {
   const [galleries, setGalleries] = useState([]);
-  const [activeTab, setActiveTab] = useState("");
+  const [activeTab, setActiveTab] = useState("sd");
 
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch(`http://localhost:5000/allToys/${activeTab}`)
       .then((res) => res.json())
       .then((data) => {
         setGalleries(data);
+
       });
-  }, []);
+  }, [activeTab]);
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);

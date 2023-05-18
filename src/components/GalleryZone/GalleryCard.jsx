@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const GalleryCard = ({ gallery }) => {
-    const {title, image, price, quantity, status} = gallery || {};
+    const {title, image, price, quantity, status, _id} = gallery || {};
   return (
     <div className="card w-96 bg-base-100 shadow-2xl mt-10">
       <figure>
@@ -15,7 +17,7 @@ const GalleryCard = ({ gallery }) => {
         <p>Quantity: {quantity}</p>
         <p>Type: {status}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">View Details</button>
+          <Link to={`/toyInfo/${_id}`} className="btn btn-primary">View Details</Link>
         </div>
       </div>
     </div>
