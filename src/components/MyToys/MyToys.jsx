@@ -3,20 +3,30 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
 const MyToys = () => {
+  const { user } = useContext(AuthContext);
+  const [toys, setToys] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
-    const {user} = useContext(AuthContext);
-    const[toys, setToys] = useState([]);
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user?.email}`)
-        .then(res=> res.json())
-        .then(data => {
-            setToys(data)
-        })
-    }, [user]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/myToys/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setToys(data);
+      });
+  }, [user]);
 
   return (
     <div className="overflow-x-auto">
+      <div className="p-2 text-center mb-10">
+        <input
+          onChange={(e) => setSearchText(e.target.value)}
+          type="text"
+          className="p-1 w-52 h-12 rounded-xl mr-3"
+          
+        />
+        <button className="btn btn-outline btn-ghost">Search</button>
+      </div>
+
       <table className="table table-zebra w-full">
         {/* head */}
         <thead>
@@ -33,18 +43,23 @@ const MyToys = () => {
           </tr>
         </thead>
         <tbody>
-          
-            {toys?.map((toy, index) =>
-                <tr>
-                <td>{index + 1}</td>
-                <td>{toy.title}</td>
-                <td>{toy.status}</td>
-                <td>{toy.sellerName}</td>
-                <td>{toy.price} BDT</td>
-                <td>{toy.quantity}</td>
-                <td>{toy.description}</td>
-              </tr>
-            )}
+          {toys?.map((toy, index) => (
+            <tr>
+              <td>{index + 1}</td>
+              <td>{toy.title}</td>
+              <td>{toy.status}</td>
+              <td>{toy.sellerName}</td>
+              <td>{toy.price} BDT</td>
+              <td>{toy.quantity}</td>
+              <td>{toy.description}</td>
+              <td>
+                <button className="btn btn-warning">Edit</button>
+              </td>
+              <td>
+                <button className="btn btn-error">Delete</button>
+              </td>
+            </tr>
+          ))}
 
           {/* <tr>
             <th>1</th>
@@ -52,8 +67,6 @@ const MyToys = () => {
             <td>Quality Control Specialist</td>
             <td>Blue</td>
           </tr> */}
-          
-          
         </tbody>
       </table>
     </div>
