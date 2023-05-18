@@ -27,7 +27,7 @@ const Navbar = () => {
       {user?.email ? (
         <>
           <li>
-            <Link to="">My Toys</Link>
+            <Link to="/myToy">My Toys</Link>
           </li>
           <li>
             <Link to="/addToy">Add A Toy</Link>

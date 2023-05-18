@@ -5,6 +5,7 @@ import Login from "../Login/Login";
 import SingUp from "../SingUp/SingUp";
 import AddAToy from "../AddAToy/AddAToy";
 import ViewDetails from "../ViewDetails/ViewDetails";
+import MyToys from "../MyToys/MyToys";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
           element: <ViewDetails></ViewDetails>,
           loader: ({ params }) =>
           fetch(`http://localhost:5000/allToys/sd/${params.toyInfoId}`),
+        },
+        {
+          path: '/myToy',
+          element: <MyToys></MyToys>
         }
       ]
     },
