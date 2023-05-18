@@ -1,8 +1,30 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const SingUp = () => {
+
+    const {createUser} = useContext(AuthContext);
+    
   const handleSignUp = (event) => {
     event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+
+    console.log(name, email, password, photo)
+
+    createUser(email, password)
+    .then(result => {
+        const user = result.user;
+        console.log(user)
+
+    })
+    .catch(error => {
+        console.log(error)
+    })
   };
 
   return (
@@ -20,7 +42,7 @@ const SingUp = () => {
                 <input
                   type="text"
                   name="name"
-                  placeholder="name"
+                  placeholder="Your Name"
                   className="input input-bordered"
                 />
               </div>
@@ -31,7 +53,7 @@ const SingUp = () => {
                 <input
                   type="text"
                   name="email"
-                  placeholder="email"
+                  placeholder="Your Email"
                   className="input input-bordered"
                 />
               </div>
@@ -54,7 +76,7 @@ const SingUp = () => {
                 <input
                   type="text"
                   name="password"
-                  placeholder="password"
+                  placeholder="Your Password"
                   className="input input-bordered"
                 />
                 <label className="label">
