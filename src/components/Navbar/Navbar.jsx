@@ -1,9 +1,52 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
+  const navItems = (
+    <>
+      <li>
+        <Link to="/">Home</Link>{" "}
+      </li>
+      <li>
+        {" "}
+        <Link to="">All Toys</Link>{" "}
+      </li>
+      <li>
+        {" "}
+        <Link to="">Blogs</Link>{" "}
+      </li>
+      {user?.email ? (
+        <>
+          <li>
+            <Link to="">My Toys</Link>
+          </li>
+          <li>
+            <Link to="/addToy">Add A Toy</Link>
+          </li>
+          <li>
+            <button onClick={handleLogOut}>Log out</button>
+          </li>
+        </>
+      ) : (
+        <li>
+          {" "}
+          <Link to="/login">Login</Link>{" "}
+        </li>
+      )}
+    </>
+  );
+
   return (
-    <div className="navbar bg-base-100 h-28">
+    <div className="navbar bg-base-100 h-28 mb-4">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -24,57 +67,18 @@ const Navbar = () => {
           <ul
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li tabIndex={0}>
-              <Link className="justify-between">All Toys</Link>
-            </li>
-            <li>
-              <Link>My Toys</Link>
-            </li>
-            <li>
-              <Link to='/addToy'>Add A Toy</Link>
-            </li>
-            <li>
-              <Link>Blogs</Link>
-            </li>
-            <li>
-              <Link to='/login'>Login</Link>
-            </li>
+            {navItems}
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
-          <img className="w-12" src={logo} alt="" />
+          <img className="w-10" src={logo} alt="" />
         </Link>
-        <h1 className="text-white text-3xl font-bold">
-          Sports <span className="text-success">ToyZone</span>{" "}
-        </h1>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-          <li tabIndex={0}>
-            <Link>All Toys</Link>
-          </li>
-          <li>
-            <Link>My Toys</Link>
-          </li>
-          <li>
-            <Link to='/addToy'>Add A Toy</Link>
-          </li>
-          <li>
-            <Link>Blogs</Link>
-          </li>
-          <li>
-            <Link to='/login'>Login</Link>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-outline btn-accent">Add to Cart</a>
+        <button className="btn btn-outline btn-warning">Appointment</button>
       </div>
     </div>
   );

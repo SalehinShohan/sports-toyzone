@@ -12,10 +12,14 @@ const AddAToy = () => {
     formState: { errors },
   } = useForm();
 
+  const onSubmit = (data) => {
+    console.log(data);
+  }
+
   return (
     <div className="text-center">
         <h2 className="text-success text-5xl mb-9 font-bold">Add Your Favourite Toy</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         {errors.exampleRequired && <span>This field is required</span>}
         <input
           className="w-1/2 h-14 rounded-xl p-2 mb-4"
