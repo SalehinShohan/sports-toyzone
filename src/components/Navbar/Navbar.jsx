@@ -39,6 +39,9 @@ const Navbar = () => {
             <li>
               <Link>Blogs</Link>
             </li>
+            <li>
+              <Link to='/login'>Login</Link>
+            </li>
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
@@ -64,6 +67,9 @@ const Navbar = () => {
           </li>
           <li>
             <Link>Blogs</Link>
+          </li>
+          <li>
+            <Link to='/login'>Login</Link>
           </li>
         </ul>
       </div>

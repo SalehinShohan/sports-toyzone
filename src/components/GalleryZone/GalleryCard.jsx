@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 const GalleryCard = ({ gallery }) => {
     const {name, img, price, rating} = gallery;
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card w-96 bg-base-100 shadow-2xl mt-10">
       <figure>
-        <img
+        <img className="w-10/12 rounded-xl"
           src={img}
           alt="Shoes"
         />
