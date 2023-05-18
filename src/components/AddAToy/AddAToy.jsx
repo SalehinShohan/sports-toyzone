@@ -2,9 +2,9 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../providers/AuthProvider";
 import { useContext } from "react";
 
-
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
+  
 
   const {
     register,
@@ -13,12 +13,23 @@ const AddAToy = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    fetch("http://localhost:5000/addToy", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
     console.log(data);
-  }
+  };
 
   return (
     <div className="text-center">
-        <h2 className="text-success text-5xl mb-9 font-bold">Add Your Favourite Toy</h2>
+      <h2 className="text-success text-5xl mb-9 font-bold">
+        Add Your Favourite Toy
+      </h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         {errors.exampleRequired && <span>This field is required</span>}
         <input
@@ -81,6 +92,8 @@ const AddAToy = () => {
           type="number"
         />
         <br />
+
+        
         <input
           className="w-1/2 h-14 rounded-xl p-2"
           {...register("description")}
