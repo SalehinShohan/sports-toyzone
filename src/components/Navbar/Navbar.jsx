@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
-  const {user, logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -34,6 +34,15 @@ const Navbar = () => {
           </li>
           <li>
             <button onClick={handleLogOut}>Log out</button>
+            {user && (
+              <div className="ml-2 tooltip" data-tip={user?.email}>
+                <img
+                  className="w-8 h-8 rounded-lg"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5S7x-uPyVGyBxjUf5jqXgtILiU-6nprBTDw&usqp=CAU"
+                  alt=""
+                />
+              </div>
+            )}
           </li>
         </>
       ) : (
@@ -73,12 +82,15 @@ const Navbar = () => {
         <Link to="/" className="btn btn-ghost normal-case text-xl">
           <img className="w-10" src={logo} alt="" />
         </Link>
+        <h2 className="text-xl font-bold text-white">
+          Sports <span className="text-success">ToyZone</span>{" "}
+        </h2>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-outline btn-warning">Appointment</button>
+        <button className="btn btn-outline btn-error">Add TO Cart</button>
       </div>
     </div>
   );

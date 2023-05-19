@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
 
@@ -71,6 +72,7 @@ const Login = () => {
                 Sign Up
               </Link>{" "}
             </p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

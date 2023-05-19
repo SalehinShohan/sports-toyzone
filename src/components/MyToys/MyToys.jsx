@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import UpdateToy from "../UpdateToy/UpdateToy";
 
@@ -7,7 +7,7 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = React.useState(false);
   const [control, setControl] = useState(false);
 
   useEffect(() => {
