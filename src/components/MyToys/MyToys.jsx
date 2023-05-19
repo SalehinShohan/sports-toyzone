@@ -41,6 +41,24 @@ const MyToys = () => {
       });
   };
 
+  const handleDelete = (id) => {
+    const proceed = confirm('Are You sure you want to delete');
+    if(proceed){
+        fetch(`http://localhost:5000/deleteToy/${id}`, {
+          method: 'DELETE',
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if(data.deletedCount > 0){
+            alert('Deleted successfully done')
+            const remaining = toys.filter((toy) => toy._id !== id);
+            setToys(remaining);
+          }
+        })
+    }
+  } 
+
   return (
     <div className="overflow-x-auto">
       <div className="p-2 text-center mb-10">
@@ -88,7 +106,7 @@ const MyToys = () => {
                   toy={toy}></UpdateToy>
               </td>
               <td>
-                <button className="btn btn-error">Delete</button>
+                <button onClick={() => handleDelete(toy._id)} className="btn btn-error">Delete</button>
               </td>
             </tr>
           ))}

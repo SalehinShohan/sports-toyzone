@@ -11,7 +11,7 @@ const ShowAllData = ({ data }) => {
         <h2 className="card-title">Seller Name: {sellerName}</h2>
         <p>Toy Name: {title}</p>
         <p>Category: {status}</p>
-        <p>Price: {price}</p>
+        <p>Price: {price} BDT</p>
         <p>Available Quantity: {quantity}</p>
         <div className="card-actions justify-end">
           <Link to={`/toyInfo/${_id}`} className="btn btn-primary">
