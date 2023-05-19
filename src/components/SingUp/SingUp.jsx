@@ -4,9 +4,8 @@ import { AuthContext } from "../providers/AuthProvider";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const SingUp = () => {
+  const { createUser } = useContext(AuthContext);
 
-    const {createUser} = useContext(AuthContext);
-    
   const handleSignUp = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -15,17 +14,16 @@ const SingUp = () => {
     const password = form.password.value;
     const photo = form.photo.value;
 
-    console.log(name, email, password, photo)
+    console.log(name, email, password, photo);
 
     createUser(email, password)
-    .then(result => {
+      .then((result) => {
         const user = result.user;
-        console.log(user)
-
-    })
-    .catch(error => {
-        console.log(error)
-    })
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
