@@ -25,7 +25,7 @@ const Features = () => {
     <section className="py-8 bg-base-100 mt-10">
       <div className="container mx-auto flex flex-col items-center">
         <h2 className="text-4xl font-bold mb-4 mt-10">Our Featured Products</h2>
-        <p className="mb-10"><button className="btn loading">Comming Soon Earlier Year.....</button></p>
+        <p className="mb-10"><button className="btn loading">Comming Soon in Earlier Years.....</button></p>
         <div className="flex flex-wrap justify-center">
           {products.map((product) => (
             <motion.div

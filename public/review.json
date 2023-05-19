@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "comment":
+        "I am extremely satisfied with the product quality and customer service. Highly recommended!",
+      "rating": 5,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnTAoAQYLpEaXqL9JP89oY9Eieo1UzBrqKEQ&usqp=CAU"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "comment":
+        "The product exceeded my expectations. It arrived on time and was well-packaged. Thank you!",
+      "rating": 4,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8z2IddoXW_X87JJzOKpL_AC3Vs4LsUgaLLw&usqp=CAU"
+    },
+    {
+      "id": 3,
+      "name": "Alex Johnson",
+      "comment":
+        "I had some issues with the delivery, but the support team was very helpful and resolved the problem quickly.",
+      "rating": 3,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyIkWCF_2NnTM-imjWtFuzsPEWFYYH-Vk76A&usqp=CAU"
+    }
+  ]
