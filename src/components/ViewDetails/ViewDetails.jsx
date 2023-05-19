@@ -23,7 +23,7 @@ const ViewDetails = () => {
           <p>Price: {datas.price} BDT</p>
           <p>Quantity: {datas.quantity}</p>
           <p>Description: {datas.description}</p>
-          <div className="rating rating-md">
+          <div className="rating rating-sm">
             <input
               type="radio"
               name="rating-7"

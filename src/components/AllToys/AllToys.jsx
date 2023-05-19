@@ -7,14 +7,14 @@ const AllToys = () => {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    fetch("https://sports-toyzone-server-salehinshohan.vercel.app/allToys/ds")
+    fetch("http://localhost:5000/allToys/ds")
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
 
   const handleSearch = () => {
     fetch(
-      `https://sports-toyzone-server-salehinshohan.vercel.app/getToyByText/${searchText}`
+      `http://localhost:5000/getToyByText/${searchText}`
     )
       .then((res) => res.json())
       .then((data) => {

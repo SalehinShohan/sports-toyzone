@@ -22,7 +22,7 @@ const AddAToy = () => {
       confirmButtonText: "OK",
     });
 
-    fetch("https://sports-toyzone-server-salehinshohan.vercel.app/addToy", {
+    fetch("http://localhost:5000/addToy", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

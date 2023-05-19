@@ -16,6 +16,37 @@ const GalleryCard = ({ gallery }) => {
         <p>Price: {price} BDT</p>
         <p>Quantity: {quantity}</p>
         <p>Type: {status}</p>
+
+        <div className="rating rating-sm">
+            <input
+              type="radio"
+              name="rating-7"
+              className="mask mask-star-2 bg-orange-400"
+            />
+            <input
+              type="radio"
+              name="rating-7"
+              className="mask mask-star-2 bg-orange-400"
+            />
+            <input
+              type="radio"
+              name="rating-7"
+              className="mask mask-star-2 bg-orange-400"
+            />
+            <input
+              type="radio"
+              name="rating-7"
+              className="mask mask-star-2 bg-orange-400"
+            />
+            <input
+              type="radio"
+              name="rating-7"
+              className="mask mask-star-2 bg-orange-400"
+              checked
+            />
+          </div>
+
+
         <div className="card-actions justify-end">
           <Link to={`/toyInfo/${_id}`} className="btn btn-primary">View Details</Link>
         </div>
