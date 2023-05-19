@@ -1,21 +1,19 @@
 /* eslint-disable react/jsx-key */
 import { useEffect, useState } from "react";
-import ShowAllData from "./ShowAllData";
+import { Link } from "react-router-dom";
 
 const AllToys = () => {
   const [datas, setData] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/allToys/ds")
+    fetch("https://sports-toyzone-server.vercel.app/allToys/ds")
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
 
   const handleSearch = () => {
-    fetch(
-      `http://localhost:5000/getToyByText/${searchText}`
-    )
+    fetch(`https://sports-toyzone-server.vercel.app/getToyByText/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -35,10 +33,46 @@ const AllToys = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-clos-2 gap-10">
-        {datas.map((data) => (
-          <ShowAllData key={data._id} data={data}></ShowAllData>
-        ))}
+      <div className="">
+        <div className="overflow-x-auto">
+          <table className="table table-zebra w-full">
+            {/* head */}
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Saller Name</th>
+                <th>Price</th>
+                <th>Available Quantity</th>
+                <th>Detail Description</th>
+                <th>View Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              {datas?.map((data, index) => (
+                <tr>
+                  <td>{index + 1}</td>
+                  <td>{data.title}</td>
+                  <td>{data.status}</td>
+                  <td>{data.sellerName}</td>
+                  <td>{data.price} BDT</td>
+                  <td>{data.quantity}</td>
+                  <td>{data.description}</td>
+                  <td>
+                    <div className="card-actions justify-end">
+                      <Link
+                        to={`/toyInfo/${data._id}`}
+                        className="btn btn-primary">
+                        View Details
+                      </Link>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

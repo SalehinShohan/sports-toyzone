@@ -8,7 +8,7 @@ const GalleryZone = () => {
   const [activeTab, setActiveTab] = useState("sd");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allToys/${activeTab}`)
+    fetch(`https://sports-toyzone-server.vercel.app/allToys/${activeTab}`)
       .then((res) => res.json())
       .then((data) => {
         setGalleries(data);
@@ -23,14 +23,15 @@ const GalleryZone = () => {
   return (
     <div>
       <div>
-        <h2 className="text-5xl text-center font-bold mt-10">
+        <h2 className="text-4xl text-center font-bold mb-10 mt-36">
           Our Gallery ToyZone
         </h2>
+        <p className="text-center">Our Valuable Car...<progress className="progress w-40 ml-5"></progress></p>
         <OurGallery></OurGallery>
       </div>
 
-      <div className="tab-container text-center mt-10">
-        <h2 className="text-5xl font-bold mb-10">Our Toys Category</h2>
+      <div className="tab-container text-center mt-32">
+        <h2 className="text-4xl font-bold mb-10">Our Toys Category</h2>
         <div className="text-center w-full font-bold m-auto">
           <div className="tabs tabs-boxed w-80 mx-auto flex justify-center items-center">
             <div

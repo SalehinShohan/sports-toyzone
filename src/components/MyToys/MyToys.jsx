@@ -11,7 +11,7 @@ const MyToys = () => {
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${user?.email}`)
+    fetch(`https://sports-toyzone-server.vercel.app/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -29,7 +29,7 @@ const MyToys = () => {
       confirmButtonText: "OK",
     });
 
-    fetch(`http://localhost:5000/updateToy/${data?._id}`, {
+    fetch(`https://sports-toyzone-server.vercel.app/updateToy/${data?._id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -48,7 +48,7 @@ const MyToys = () => {
     
 
     if(proceed){
-        fetch(`http://localhost:5000/deleteToy/${id}`, {
+        fetch(`https://sports-toyzone-server.vercel.app/deleteToy/${id}`, {
           method: 'DELETE',
         })
         .then(res => res.json())

@@ -1,23 +1,71 @@
 [
     {
-        "_id": "01",
-        "name": "Audi mx-2023",
-        "img": "https://assetscdn1.paytm.com/images/catalog/product/K/KI/KIDKINSMART-AUDPEEK20818792C1798D/1564596473295_0..jpg",
-        "price": "20",
-        "rating": "5"
+      "id": 1,
+      "name": "Tesla Sports Car 25",
+      "src": "https://thumbs.dreamstime.com/b/silver-sports-car-3501169.jpg",
+      "date": "August 1, 2025"
+      
     },
     {
-        "_id": "02",
-        "name": "Truck Lori 2022",
-        "img": "https://assets.kogan.com/images/kg-electronic/KXG-02744/1-31272bb880-02744.jpg?auto=webp&bg-color=fff&canvas=340%2C226&fit=bounds&height=226&quality=75&width=340",
-        "price": "21",
-        "rating": "5"
+      "id": 3,
+      "name": "Truck Simulate 25",
+      "src": "https://thumbs.dreamstime.com/b/cute-boy-playing-toy-trucks-home-homecolor-image-canon-dmkii-51388120.jpg",
+      "date": "April 28, 2025"
+      
     },
     {
-        "_id": "03",
-        "name": "Police Car",
-        "img": "https://c8.alamy.com/comp/HF01AR/toy-police-car-and-police-officer-HF01AR.jpg",
-        "price": "21",
-        "rating": "5"
+      "id": 4,
+      "name": "Bulet Police Car 25",
+      "src": "https://thumbs.dreamstime.com/b/toy-police-car-isolated-white-background-53480878.jpg",
+      "date": "January 1, 2025"
+      
+    },
+    {
+      "id": 5,
+      "name": "Racing Car 9m cc-28",
+      "src": "https://thumbs.dreamstime.com/b/yellow-remote-controller-toy-car-isolated-white-40144676.jpg",
+      "date": "January 1, 2028"
+      
+    },
+    {
+      "id": 6,
+      "name": "Truck Troll 24",
+      "src": "https://thumbs.dreamstime.com/b/plastic-toy-trucks-white-background-72633029.jpg",
+      "date": "December 15, 2024"
+    },
+    {
+      "id": 7,
+      "name": "Army Police 24",
+      "src": "https://thumbs.dreamstime.com/b/toy-police-car-made-wood-studio-light-my-home-174919553.jpg",
+      "date": "January 1, 2024"
+      
+    },
+    {
+      "id": 8,
+      "name": "Truck Lori 24",
+      "src": "https://thumbs.dreamstime.com/b/baby-toy-trucks-10520766.jpg",
+      "date": "July 1, 2024"
+      
+    },
+    {
+      "id": 9,
+      "name": "Racing DLS-24",
+      "src": "https://thumbs.dreamstime.com/b/sports-car-3412022.jpg",
+      "date": "October 28, 2024"
+      
+    },
+    {
+      "id": 10,
+      "name": "Police Grend",
+      "src": "https://thumbs.dreamstime.com/b/toy-police-car-wooden-floor-close-up-223430035.jpg",
+      "date": "June 9, 2024"
+      
+    },
+    {
+      "id": 11,
+      "name": "Racing Car Ship",
+      "src": "https://thumbs.dreamstime.com/b/senior-superhero-driving-toy-sports-car-mask-cape-42093269.jpg",
+      "date": "May 19, 2024"
     }
-]
+   
+  ]
