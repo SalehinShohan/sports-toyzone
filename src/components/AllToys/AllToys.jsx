@@ -10,7 +10,7 @@ const AllToys = () => {
       .then((data) => setData(data));
   }, []);
 
-  return <div>
+  return <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-clos-2 gap-10">
         {
             datas.map(data => <ShowAllData
                 key={data._id}
