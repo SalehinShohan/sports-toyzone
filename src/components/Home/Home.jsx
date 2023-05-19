@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import ContactUs from "../ContactUs/ContactUs";
 import CustomerReview from "../CustomerReview/CustomerReview";
 import Features from "../Freatures/Features";
 import GalleryZone from "../GalleryZone/GalleryZone";
@@ -10,6 +11,7 @@ const Home = () => {
             <GalleryZone></GalleryZone>
             <Features></Features>
             <CustomerReview></CustomerReview>
+            <ContactUs></ContactUs>
         </div>
     );
 };
