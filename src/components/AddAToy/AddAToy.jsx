@@ -22,7 +22,7 @@ const AddAToy = () => {
       confirmButtonText: "OK",
     });
 
-    fetch("http://localhost:5000/addToy", {
+    fetch("https://sports-toyzone-server-salehinshohan.vercel.app/addToy", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -35,81 +35,107 @@ const AddAToy = () => {
   };
 
   return (
-    <div className="text-center">
-      <h2 className="text-success text-5xl mb-9 font-bold">
+    <div className="">
+      <h2 className="text-accent text-center text-5xl mb-10 font-bold">
         Add Your Favourite Toy
       </h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="text-center" onSubmit={handleSubmit(onSubmit)}>
         {errors.exampleRequired && <span>This field is required</span>}
+        <div>
+          <h1 className="text-2xl text-start text-accent lg:ml-80 mb-2">Toy Name:</h1>
         <input
-          className="w-1/2 h-14 rounded-xl p-2 mb-4"
+          className="w-1/2 h-14 rounded-xl p-2 mb-2 bg bg-base-300 input-accent"
           {...register("title")}
           placeholder="Name"
           defaultValue=""
         />
-        <br />
+        </div>
+        
+        <div>
+        <h1 className="text-2xl text-start text-accent lg:ml-80 mb-2">Seller Name:</h1>
         <input
-          className="w-1/2 h-14 rounded-xl p-2 mb-4"
+          className="w-1/2 h-14 rounded-xl p-2 mb-2 bg bg-base-300 input-accent"
           {...register("sellerName", { required: true })}
           placeholder="Seller Name"
           defaultValue=""
         />
-        <br />
+        </div>
+        
+        <div>
+        <h1 className="text-2xl text-start text-accent lg:ml-80 mb-2">Seller Email:</h1>
         <input
-          className="w-1/2 h-14 rounded-xl p-2 mb-4"
+          className="w-1/2 h-14 rounded-xl p-2 mb-2 bg bg-base-300 input-accent"
           value={user?.email}
           {...register("postedBy")}
           placeholder="Seller Email"
           type="email"
         />
+        </div>
 
-        <br />
+        
+        <div>
+        <h1 className="text-2xl text-start text-accent lg:ml-80 mb-2">Category:</h1>
         <select
-          className="w-1/2 h-14 rounded-xl p-2 mb-4"
+          className="w-1/2 h-14 rounded-xl p-2 mb-2 bg bg-base-300 input-accent"
           {...register("status")}>
           <option value="sports">Sports Toy</option>
           <option value="truck">Truck Toy</option>
           <option value="police">Police Toy</option>
         </select>
-        <br />
+        </div>
+        
+        <div>
+        <h1 className="text-2xl text-start text-accent lg:ml-80 mb-2">Image URL:</h1>
         <input
-          className="w-1/2 h-14 rounded-xl p-2 mb-4"
+          className="w-1/2 h-14 rounded-xl p-2 mb-2 bg bg-base-300 input-accent"
           {...register("image")}
           placeholder="image link"
           type="url"
           defaultValue=""
         />
-        <br />
+        </div>
+        
+        <div>
+        <h1 className="text-2xl text-start text-accent lg:ml-80 mb-2">Date:</h1>
         <input
-          className="w-1/2 h-14 rounded-xl p-2 mb-4"
+          className="w-1/2 h-14 rounded-xl p-2 mb-2 bg bg-base-300 input-accent"
           {...register("deadline")}
           placeholder="deadline"
           type="date"
         />
-        <br />
+        </div>
+        
+        <div>
+        <h1 className="text-2xl text-start text-accent lg:ml-80 mb-2">Price:</h1>
         <input
-          className="w-1/2 h-14 rounded-xl p-2 mb-4"
+          className="w-1/2 h-14 rounded-xl p-2 mb-2 bg bg-base-300 input-accent"
           {...register("price")}
           placeholder="Price"
           type="number"
         />
-        <br />
+        </div>
+        
+        <div>
+        <h1 className="text-2xl text-start text-accent lg:ml-80 mb-2">Available Quantity:</h1>
         <input
-          className="w-1/2 h-14 rounded-xl p-2 mb-4"
+          className="w-1/2 h-14 rounded-xl p-2 mb-2 bg bg-base-300 input-accent"
           {...register("quantity")}
           placeholder="Available quantity"
           type="number"
         />
-        <br />
-
+        </div>
         
+        <div>
+        <h1 className="text-2xl text-start text-accent lg:ml-80 mb-2">Description:</h1>
         <input
-          className="w-1/2 h-14 rounded-xl p-2"
+          className="w-1/2 h-14 rounded-xl p-2 bg bg-base-300 input-accent"
           {...register("description")}
-          placeholder="description"
+          placeholder="Description"
         />
-        <br />
-        <div className="w-full items-center text-center mt-4">
+        </div>
+        
+      
+        <div className="w-full mt-4">
           <button className="btn btn-outline btn-success">Add a Toy</button>
         </div>
       </form>

@@ -7,27 +7,20 @@ import Swal from "sweetalert2";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
-  const [searchText, setSearchText] = useState("");
   const [modalShow, setModalShow] = React.useState(false);
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${user?.email}`)
+    fetch(`https://sports-toyzone-server-salehinshohan.vercel.app/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
       });
   }, [user, control]);
 
-  const handleSearch = () => {
-    fetch(`http://localhost:5000/getToyByText/${searchText}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setToys(data);
-      });
-  };
-
   const handleToyUpdate = (data) => {
+
+    console.log(data)
 
     Swal.fire({
       icon: "success",
@@ -36,7 +29,7 @@ const MyToys = () => {
       confirmButtonText: "OK",
     });
 
-    fetch(`http://localhost:5000/updateToy/${data?._id}`, {
+    fetch(`https://sports-toyzone-server-salehinshohan.vercel.app/updateToy/${data?._id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -55,7 +48,7 @@ const MyToys = () => {
     
 
     if(proceed){
-        fetch(`http://localhost:5000/deleteToy/${id}`, {
+        fetch(`https://sports-toyzone-server-salehinshohan.vercel.app/deleteToy/${id}`, {
           method: 'DELETE',
         })
         .then(res => res.json())
@@ -72,17 +65,6 @@ const MyToys = () => {
 
   return (
     <div className="overflow-x-auto">
-      <div className="p-2 text-center mb-10">
-        
-        <input
-          onChange={(e) => setSearchText(e.target.value)}
-          type="text"
-          className="p-1 w-52 h-12 rounded-xl mr-3"
-        />
-        <button onClick={handleSearch} className="btn btn-outline btn-ghost">
-          Search
-        </button>
-      </div>
 
       <table className="table table-zebra w-full">
         {/* head */}

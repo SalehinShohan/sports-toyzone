@@ -90,7 +90,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-outline btn-error">Add TO Cart</button>
+        <button className="btn btn-outline btn-accent">Add TO Cart</button>
       </div>
     </div>
   );

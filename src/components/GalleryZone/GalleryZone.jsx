@@ -8,7 +8,7 @@ const GalleryZone = () => {
   const [activeTab, setActiveTab] = useState("sd");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allToys/${activeTab}`)
+    fetch(`https://sports-toyzone-server-salehinshohan.vercel.app/allToys/${activeTab}`)
       .then((res) => res.json())
       .then((data) => {
         setGalleries(data);
