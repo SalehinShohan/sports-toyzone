@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -17,12 +18,19 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+    Swal.fire({
+      icon: "success",
+      title: "Login Successful!",
+      text: "You have successfully Login.",
+      confirmButtonText: "OK",
+    });
+
     console.log(email, password);
     signIn(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate(from, {replace:true});
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);

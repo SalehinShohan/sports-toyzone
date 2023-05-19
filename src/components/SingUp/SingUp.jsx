@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Swal from "sweetalert2";
 
 const SingUp = () => {
   const { createUser } = useContext(AuthContext);
@@ -13,6 +14,13 @@ const SingUp = () => {
     const email = form.email.value;
     const password = form.password.value;
     const photo = form.photo.value;
+
+    Swal.fire({
+      icon: "success",
+      title: "Signup Successful!",
+      text: "You have successfully signed up.",
+      confirmButtonText: "OK",
+    });
 
     console.log(name, email, password, photo);
 

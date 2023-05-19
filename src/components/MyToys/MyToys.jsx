@@ -2,6 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import UpdateToy from "../UpdateToy/UpdateToy";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -27,6 +28,14 @@ const MyToys = () => {
   };
 
   const handleToyUpdate = (data) => {
+
+    Swal.fire({
+      icon: "success",
+      title: "Updated Successful!",
+      text: "You have successfully updated.",
+      confirmButtonText: "OK",
+    });
+
     fetch(`http://localhost:5000/updateToy/${data?._id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
@@ -43,6 +52,8 @@ const MyToys = () => {
 
   const handleDelete = (id) => {
     const proceed = confirm('Are You sure you want to delete');
+    
+
     if(proceed){
         fetch(`http://localhost:5000/deleteToy/${id}`, {
           method: 'DELETE',
