@@ -15,14 +15,14 @@ const Banner = () => {
             <h1 className="text-5xl font-bold">
               Where Imagination Takes Flight - Toys for Every Adventure!
             </h1>
-            <p>
+            <p className="hidden sm:block">
               Welcome to our magical toy wonderland! Discover joy and
               imagination with our enchanting collection of toys. Embrace the
               wonder, ignite the laughter, and create cherished memories that
               will last a lifetime
             </p>
 
-            <div className="Search-box">
+            <div className="Search-box hidden sm:block">
               <div className="all-buttons-container mt-5">
                 <div className="search-input small-box">
                   <p>
@@ -66,13 +66,13 @@ const Banner = () => {
             <h1 className="text-5xl font-bold">
               Where Imagination Takes Flight - Toys for Every Adventure!
             </h1>
-            <p>
+            <p className="hidden sm:block">
               Welcome to our magical toy wonderland! Discover joy and
               imagination with our enchanting collection of toys. Embrace the
               wonder, ignite the laughter, and create cherished memories that
               will last a lifetime
             </p>
-            <div className="Search-box">
+            <div className="Search-box hidden sm:block">
               <div className="all-buttons-container mt-5">
                 <div className="search-input small-box">
                   <p>
@@ -115,13 +115,13 @@ const Banner = () => {
             <h1 className="text-5xl font-bold">
               Where Imagination Takes Flight - Toys for Every Adventure!
             </h1>
-            <p>
+            <p className="hidden sm:block">
               Welcome to our magical toy wonderland! Discover joy and
               imagination with our enchanting collection of toys. Embrace the
               wonder, ignite the laughter, and create cherished memories that
               will last a lifetime
             </p>
-            <div className="Search-box">
+            <div className="Search-box hidden sm:block">
               <div className="all-buttons-container mt-5">
                 <div className="search-input small-box">
                   <p>
@@ -164,13 +164,13 @@ const Banner = () => {
             <h1 className="text-5xl font-bold">
               Where Imagination Takes Flight - Toys for Every Adventure!
             </h1>
-            <p>
+            <p className="hidden sm:block">
               Welcome to our magical toy wonderland! Discover joy and
               imagination with our enchanting collection of toys. Embrace the
               wonder, ignite the laughter, and create cherished memories that
               will last a lifetime
             </p>
-            <div className="Search-box">
+            <div className="Search-box hidden sm:block">
               <div className="all-buttons-container mt-5">
                 <div className="search-input small-box">
                   <p>
