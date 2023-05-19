@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import GalleryCard from "./GalleryCard";
+import OurGallery from "../OurGallery/OurGallery";
+
 
 const GalleryZone = () => {
   const [galleries, setGalleries] = useState([]);
@@ -22,8 +24,9 @@ const GalleryZone = () => {
     <div>
       <div>
         <h2 className="text-5xl text-center font-bold mt-10">
-          Gallery ToyZone
+          Our Gallery ToyZone
         </h2>
+        <OurGallery></OurGallery>
       </div>
 
       <div className="tab-container text-center mt-10">
