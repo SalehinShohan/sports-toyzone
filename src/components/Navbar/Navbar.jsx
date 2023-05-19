@@ -18,7 +18,7 @@ const Navbar = () => {
       </li>
       <li>
         {" "}
-        <Link to="">All Toys</Link>{" "}
+        <Link to="/allToys">All Toys</Link>{" "}
       </li>
       <li>
         {" "}
