@@ -41,7 +41,7 @@ const AddAToy = () => {
         <br />
         <input
           className="w-1/2 h-14 rounded-xl p-2 mb-4"
-          {...register("seller-name", { required: true })}
+          {...register("sellerName", { required: true })}
           placeholder="Seller Name"
           defaultValue=""
         />
