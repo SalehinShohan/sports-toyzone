@@ -12,17 +12,17 @@ const CustomerReview = () => {
   }, [])
 
   return (
-    <div className="bg-base-100 py-8">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-extrabold text-center mt-16">
+    <div className="bg-base-100">
+      <div className="max-w-4xl sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-extrabold mt-16">
           Customer Reviews
         </h2>
-        <p className="text-center mt-5">Our Honorable Customer</p>
+        <p className="mt-5 mb-16">Our Honorable Customer</p>
         <div className="mt-6 space-y-6">
           {reviews.map((review) => (
             <div
               key={review.id}
-              className=" rounded-lg shadow-2xl mr-10 px-6 py-4">
+              className=" rounded-lg shadow-2xl mr-10">
               <div className="flex items-center justify-between">
                 <div className="flex items-center ">
                   <div className="h-10 w-10 rounded-full overflow-hidden">

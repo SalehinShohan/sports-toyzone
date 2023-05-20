@@ -1,10 +1,12 @@
 /* eslint-disable react/jsx-key */
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../Hooks/useTitle";
 
 const AllToys = () => {
   const [datas, setData] = useState([]);
   const [searchText, setSearchText] = useState("");
+  useTitle('All Toys')
 
   useEffect(() => {
     fetch("https://sports-toyzone-server.vercel.app/allToys/ds")

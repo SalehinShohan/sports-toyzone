@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Swal from "sweetalert2";
+import useTitle from "../Hooks/useTitle";
 
 const SingUp = () => {
   const { createUser } = useContext(AuthContext);
+
+  useTitle('Signup');
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -35,7 +38,7 @@ const SingUp = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero bg-base-100">
       <div className="hero-content flex-col lg:flex-row">
         <div className="w-1/2 mr-12"></div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

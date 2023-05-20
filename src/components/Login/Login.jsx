@@ -3,12 +3,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Swal from "sweetalert2";
+import useTitle from "../Hooks/useTitle";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
+  useTitle('Login')
 
   const from = location?.state?.from?.pathname || "/";
 
@@ -38,7 +40,7 @@ const Login = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero bg-base-100">
       <div className="hero-content flex-col lg:flex-row">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">

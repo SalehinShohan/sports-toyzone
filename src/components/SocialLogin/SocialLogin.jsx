@@ -27,7 +27,7 @@ const SocialLogin = () => {
       <div className="text-center">
         <button
           onClick={handleGoogleSingIn}
-          className="btn btn-circle btn-outline">
+          className="btn btn-circle btn-outline text-white">
           G
         </button>
       </div>

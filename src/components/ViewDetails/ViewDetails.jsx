@@ -1,8 +1,11 @@
 /* eslint-disable react/jsx-key */
 import { useLoaderData, useParams } from "react-router-dom";
+import useTitle from "../Hooks/useTitle";
 
 const ViewDetails = () => {
   const allData = useLoaderData();
+
+  useTitle('View Details')
 
   const { toyInfoId } = useParams();
   console.log(toyInfoId);

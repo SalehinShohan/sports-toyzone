@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
@@ -14,20 +14,20 @@ const Navbar = () => {
   const navItems = (
     <>
       <li>
-        <Link to="/">Home</Link>{" "}
+        <NavLink to="/">Home</NavLink>{" "}
       </li>
       <li>
         {" "}
-        <Link to="/allToys">All Toys</Link>{" "}
+        <NavLink to="/allToys">All Toys</NavLink>{" "}
       </li>
       <li>
         {" "}
-        <Link to="/blog">Blogs</Link>{" "}
+        <NavLink to="/blog">Blogs</NavLink>
       </li>
       {user?.email ? (
         <>
           <li>
-            <Link to="/myToy">My Toys</Link>
+            <NavLink to="/myToy">My Toys</NavLink>
           </li>
           <li>
             <Link to="/addToy">Add A Toy</Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
       ) : (
         <li>
           {" "}
-          <Link to="/login">Login</Link>{" "}
+          <NavLink to="/login">Login</NavLink>{" "}
         </li>
       )}
     </>
