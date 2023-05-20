@@ -13,7 +13,7 @@ const MyToys = () => {
   useTitle('My Toys')
 
   useEffect(() => {
-    fetch(`https://sports-toyzone-server.vercel.app/myToys/${user?.email}`)
+    fetch(`http://localhost:5000/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -31,7 +31,7 @@ const MyToys = () => {
       confirmButtonText: "OK",
     });
 
-    fetch(`https://sports-toyzone-server.vercel.app/updateToy/${data?._id}`, {
+    fetch(`http://localhost:5000/updateToy/${data?._id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -50,7 +50,7 @@ const MyToys = () => {
     
 
     if(proceed){
-        fetch(`https://sports-toyzone-server.vercel.app/deleteToy/${id}`, {
+        fetch(`http://localhost:5000/deleteToy/${id}`, {
           method: 'DELETE',
         })
         .then(res => res.json())
@@ -63,7 +63,24 @@ const MyToys = () => {
           }
         })
     }
-  } 
+  }
+
+  const handleMaxPrice = () => {
+
+    fetch(`http://localhost:5000/maxPrice/${user?.email}`)
+    .then(res => res.json())
+    .then(data => {
+      setToys(data);
+    })
+  }
+  const handleMinPrice = () => {
+
+    fetch(`http://localhost:5000/minPrice/${user?.email}`)
+    .then(res => res.json())
+    .then(data => {
+      setToys(data);
+    })
+  }
 
   return (
     <div className="overflow-x-auto">
@@ -107,6 +124,10 @@ const MyToys = () => {
           ))}
         </tbody>
       </table>
+      <div className="text-center mt-5">
+      <button className="btn btn-outline btn-warning" onClick={handleMaxPrice}> Max Price</button>
+      <button className="btn btn-outline btn-warning ml-2" onClick={handleMinPrice}> Min Price</button>
+      </div>
     </div>
   );
 };
