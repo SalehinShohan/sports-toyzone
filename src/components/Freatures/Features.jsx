@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Features = () => {
   const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    AOS.init({ once: true }); // Initialize AOS with options (optional)
+  }, []);
 
   useEffect(() => {
     fetch("gallery.json")
@@ -25,8 +31,16 @@ const Features = () => {
     <section className="py-8 bg-base-100 mt-10">
       <div className="container mx-auto flex flex-col items-center">
         <h2 className="text-4xl font-bold mb-4 mt-10">Our Featured Products</h2>
-        <p className="mb-10"><button className="btn loading">Comming Soon in Earlier Years.....</button></p>
-        <div className="flex flex-wrap justify-center">
+        <p className="mb-10">
+          <button className="btn loading">
+            Comming Soon in Earlier Years.....
+          </button>
+        </p>
+        <div
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+          className="flex flex-wrap justify-center">
           {products.map((product) => (
             <motion.div
               key={product.id}
@@ -47,7 +61,6 @@ const Features = () => {
             </motion.div>
           ))}
         </div>
-       
       </div>
     </section>
   );
