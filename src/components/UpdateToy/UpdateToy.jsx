@@ -13,12 +13,9 @@ const UpdateToy = (props) => {
   } = useForm();
   return (
     <div>
-      {/* The button to open modal */}
-      <label htmlFor={`my-modal-${props?.toy._id}`} className="btn btn-info">
+      <label htmlFor={`my-modal-${props?.toy._id}`} className="btn btn-sm btn-info">
         Edit
       </label>
-
-      {/* Put this part before </body> tag */}
       <input type="checkbox" id={`my-modal-${props?.toy._id}`} className="modal-toggle" />
       <div {...props} className="modal">
         <div className="modal-box w-11/12 max-w-2xl">

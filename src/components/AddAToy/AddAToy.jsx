@@ -138,7 +138,7 @@ const AddAToy = () => {
         
       
         <div className="w-full mt-4">
-          <button className="btn btn-outline btn-success">Add a Toy</button>
+          <button className="btn btn-sm btn-outline btn-success">Add a Toy</button>
         </div>
       </form>
     </div>

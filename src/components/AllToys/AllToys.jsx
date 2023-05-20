@@ -65,7 +65,7 @@ const AllToys = () => {
                     <div className="card-actions justify-end">
                       <Link
                         to={`/toyInfo/${data._id}`}
-                        className="btn btn-primary">
+                        className="btn btn-sm btn-outline">
                         View Details
                       </Link>
                     </div>

@@ -87,13 +87,13 @@ const MyToys = () => {
     <div className="overflow-x-auto">
       <div className="text-end mb-5 mt-5">
         <button
-          className="btn btn-sm"
+          className="btn btn-sm btn-outline btn-accent"
           onClick={handleMaxPrice}>
           {" "}
           Max Price
         </button>
         <button
-          className="btn btn-sm btn-base ml-2"
+          className="btn btn-sm btn-outline ml-2"
           onClick={handleMinPrice}>
           {" "}
           Min Price
@@ -134,7 +134,7 @@ const MyToys = () => {
               <td>
                 <button
                   onClick={() => handleDelete(toy._id)}
-                  className="btn btn-error">
+                  className="btn btn-sm btn-error">
                   Delete
                 </button>
               </td>

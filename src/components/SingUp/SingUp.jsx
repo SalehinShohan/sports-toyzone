@@ -100,7 +100,7 @@ const SingUp = () => {
                   <span className="label-text">Confirm Password</span>
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   name="password"
                   placeholder="Your Password"
                   className="input input-bordered"

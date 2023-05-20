@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CustomerReview = () => {
 
@@ -11,6 +13,10 @@ const CustomerReview = () => {
     })
   }, [])
 
+  useEffect(() => {
+    AOS.init({ once: true }); // Initialize AOS with options (optional)
+  }, []);
+
   return (
     <div className="bg-base-100">
       <div className="max-w-4xl sm:px-6 lg:px-8">
@@ -18,7 +24,11 @@ const CustomerReview = () => {
           Customer Reviews
         </h2>
         <p className="mt-5 mb-16">Our Honorable Customer</p>
-        <div className="mt-6 space-y-6">
+        <div 
+          data-aos="fade-right"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        className="mt-6 space-y-6">
           {reviews.map((review) => (
             <div
               key={review.id}
