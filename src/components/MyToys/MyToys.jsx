@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import UpdateToy from "../UpdateToy/UpdateToy";
 import Swal from "sweetalert2";
@@ -8,7 +8,7 @@ import useTitle from "../Hooks/useTitle";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
-  const [modalShow, setModalShow] = React.useState(false);
+  
   const [control, setControl] = useState(false);
   useTitle("My Toys");
 
@@ -127,8 +127,7 @@ const MyToys = () => {
               <td>{toy.description}</td>
               <td>
                 <UpdateToy
-                  show={modalShow}
-                  onHide={() => setModalShow(false)}
+                  
                   handleToyUpdate={handleToyUpdate}
                   toy={toy}></UpdateToy>
               </td>

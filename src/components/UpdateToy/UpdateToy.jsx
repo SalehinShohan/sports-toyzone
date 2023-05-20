@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 
 const UpdateToy = (props) => {
   const { handleToyUpdate } = props;
+  console.log(props.toy.price);
+  console.log(props.toy._id);
 
   const {
     register,
@@ -12,12 +14,12 @@ const UpdateToy = (props) => {
   return (
     <div>
       {/* The button to open modal */}
-      <label htmlFor="my-modal-5" className="btn btn-info">
+      <label htmlFor={`my-modal-${props?.toy._id}`} className="btn btn-info">
         Edit
       </label>
 
       {/* Put this part before </body> tag */}
-      <input type="checkbox" id="my-modal-5" className="modal-toggle" />
+      <input type="checkbox" id={`my-modal-${props?.toy._id}`} className="modal-toggle" />
       <div {...props} className="modal">
         <div className="modal-box w-11/12 max-w-2xl">
           <h2 className="text-5xl text-accent text-center font-bold mb-10">
@@ -72,7 +74,7 @@ const UpdateToy = (props) => {
           </form>
 
           <div className="modal-action">
-            <label htmlFor="my-modal-5" className="btn">
+            <label htmlFor={`my-modal-${props?.toy._id}`} className="btn">
               Exit!
             </label>
           </div>
