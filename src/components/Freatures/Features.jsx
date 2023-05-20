@@ -37,7 +37,7 @@ const Features = () => {
           </button>
         </p>
         <div
-          data-aos="fade-down"
+          data-aos="fade-left"
           data-aos-easing="linear"
           data-aos-duration="1500"
           className="flex flex-wrap justify-center">

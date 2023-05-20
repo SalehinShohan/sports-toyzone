@@ -1,27 +1,28 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Swal from "sweetalert2";
 import useTitle from "../Hooks/useTitle";
+import { Link, useNavigate } from "react-router-dom";
 
 const SingUp = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  useTitle('Signup');
+  const from = location?.state?.from?.pathname || "/";
+
+  useTitle("Signup");
 
   const handleSignUp = (event) => {
     event.preventDefault();
-    setError('');
-    
+    setError("");
+
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     const photo = form.photo.value;
-
-    
 
     console.log(name, email, password, photo);
 
@@ -30,26 +31,33 @@ const SingUp = () => {
       return;
     }
 
-    if ((email, password)){
-    createUser(email, password)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        Swal.fire({
-          icon: "success",
-          title: "Signup Successful!",
-          text: "You have successfully signed up.",
-          confirmButtonText: "OK",
+    if ((email, password)) {
+      createUser(email, password)
+        .then((result) => {
+          const user = result.user;
+          console.log(user);
+
+          if (user) {
+            updateUserProfile({ displayName: name, photoURL: photo });
+            Swal.fire({
+              icon: "success",
+              title: "Signup Successful!",
+              text: "You have successfully signed up.",
+              confirmButtonText: "OK",
+            });
+
+            form.reset();
+            navigate(from, {replace:true});
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          Swal.fire({
+            icon: "error",
+            title: "Please provide valid information.",
+            confirmButtonText: "OK",
+          });
         });
-      })
-      .catch((error) => {
-        console.log(error);
-        Swal.fire({
-          icon: "error",
-          title: "Please provide valid information.",
-          confirmButtonText: "OK",
-        });
-      });
     }
   };
 
@@ -88,7 +96,7 @@ const SingUp = () => {
                   <span className="label-text">Photo URL</span>
                 </label>
                 <input
-                  type="file"
+                  type="text"
                   name="photo"
                   placeholder="Photo URL"
                   className="input input-bordered p-2"
@@ -128,7 +136,6 @@ const SingUp = () => {
             </p>
             <SocialLogin></SocialLogin>
           </div>
-          
         </div>
       </div>
     </div>
