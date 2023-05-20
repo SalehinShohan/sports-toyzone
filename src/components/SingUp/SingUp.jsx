@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -7,34 +7,50 @@ import useTitle from "../Hooks/useTitle";
 
 const SingUp = () => {
   const { createUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   useTitle('Signup');
 
   const handleSignUp = (event) => {
     event.preventDefault();
+    setError('');
+    
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     const photo = form.photo.value;
 
-    Swal.fire({
-      icon: "success",
-      title: "Signup Successful!",
-      text: "You have successfully signed up.",
-      confirmButtonText: "OK",
-    });
+    
 
     console.log(name, email, password, photo);
 
+    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+      setError("Password not valid need 8 character");
+      return;
+    }
+
+    if ((email, password)){
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        Swal.fire({
+          icon: "success",
+          title: "Signup Successful!",
+          text: "You have successfully signed up.",
+          confirmButtonText: "OK",
+        });
       })
       .catch((error) => {
         console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "Please provide valid information.",
+          confirmButtonText: "OK",
+        });
       });
+    }
   };
 
   return (
@@ -94,6 +110,7 @@ const SingUp = () => {
                     Forgot password?
                   </a>
                 </label>
+                <p className="text-center">{error}</p>
               </div>
               <div className="form-control mt-6">
                 <input
@@ -111,6 +128,7 @@ const SingUp = () => {
             </p>
             <SocialLogin></SocialLogin>
           </div>
+          
         </div>
       </div>
     </div>

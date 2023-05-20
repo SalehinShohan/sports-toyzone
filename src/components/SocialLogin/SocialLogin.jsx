@@ -17,7 +17,7 @@ const SocialLogin = () => {
         navigate(from, {replace:true});
       })
       .then((error) => {
-        console.log(error);
+        console.log(error.message);
       });
   };
 

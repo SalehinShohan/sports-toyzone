@@ -20,23 +20,31 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    Swal.fire({
-      icon: "success",
-      title: "Login Successful!",
-      text: "You have successfully Login.",
-      confirmButtonText: "OK",
-    });
+    
 
     console.log(email, password);
+    if ((email, password)){
     signIn(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful!",
+          text: "You have successfully Login.",
+          confirmButtonText: "OK",
+        });
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
+        Swal.fire({
+          icon: "error",
+          text: "Please valid email and password",
+          confirmButtonText: "OK",
+        });
       });
+    }
   };
 
   return (

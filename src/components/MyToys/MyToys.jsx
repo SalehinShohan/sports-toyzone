@@ -46,7 +46,8 @@ const MyToys = () => {
   };
 
   const handleDelete = (id) => {
-    const proceed = confirm('Are You sure you want to delete');
+    
+    const proceed = confirm('Are you sure yuo want to delete?')
     
 
     if(proceed){
@@ -57,7 +58,12 @@ const MyToys = () => {
         .then(data => {
           console.log(data);
           if(data.deletedCount > 0){
-            alert('Deleted successfully done')
+            Swal.fire({
+              title: 'Success!',
+              text: 'Deleted Successfully Done',
+              icon: 'success',
+              confirmButtonText: 'Ok'
+            })
             const remaining = toys.filter((toy) => toy._id !== id);
             setToys(remaining);
           }
