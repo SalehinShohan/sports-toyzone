@@ -9,13 +9,13 @@ const AllToys = () => {
   useTitle('All Toys')
 
   useEffect(() => {
-    fetch("http://localhost:5000/allToys/ds")
+    fetch("https://sports-toyzone-server.vercel.app/allToys/ds")
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/getToyByText/${searchText}`)
+    fetch(`https://sports-toyzone-server.vercel.app/getToyByText/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
