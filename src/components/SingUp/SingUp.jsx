@@ -36,7 +36,8 @@ const SingUp = () => {
         .then((result) => {
           const user = result.user;
           console.log(user);
-
+          user.displayName=name;
+          user.photoURL=photo;
           if (user) {
             updateUserProfile({ displayName: name, photoURL: photo });
             Swal.fire({
