@@ -27,7 +27,7 @@ const SingUp = () => {
     console.log(name, email, password, photo);
 
     if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
-      setError("Password not valid need 8 character");
+      setError("Password not valid need 8 character also one capital letter one number");
       return;
     }
 
