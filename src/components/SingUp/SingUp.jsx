@@ -79,6 +79,7 @@ const SingUp = () => {
                   name="name"
                   placeholder="Your Name"
                   className="input input-bordered"
+                   required
                 />
               </div>
               <div className="form-control">
@@ -86,10 +87,11 @@ const SingUp = () => {
                   <span className="label-text">Email</span>
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   placeholder="Your Email"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -101,6 +103,7 @@ const SingUp = () => {
                   name="photo"
                   placeholder="Photo URL"
                   className="input input-bordered p-2"
+                  required
                 />
               </div>
 
@@ -113,6 +116,7 @@ const SingUp = () => {
                   name="password"
                   placeholder="Your Password"
                   className="input input-bordered"
+                  required
                 />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
