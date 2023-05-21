@@ -54,10 +54,10 @@ const Features = () => {
                 animate="animate"
                 className="w-48 h-48 rounded-full"
               />
-              <span className="text-center text-success mt-2">
+              <h1 className="text-center text-success mt-2">
                 {product.name}
-              </span>
-              <span className="text-center mt-2">{product.date}</span>
+              </h1>
+              <p className="text-center mt-2">{product.date}</p>
             </motion.div>
           ))}
         </div>
