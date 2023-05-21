@@ -32,7 +32,7 @@ const Features = () => {
       <div className="container mx-auto flex flex-col items-center">
         <h2 className="text-4xl font-bold mb-4 mt-10">Our Featured Products</h2>
         <p className="mb-10">
-          <button className="btn loading">
+          <button className="btn btn-sm loading bg-base-100 border-0">
             Comming Soon in Earlier Years.....
           </button>
         </p>

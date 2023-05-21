@@ -26,7 +26,7 @@ const GalleryZone = () => {
         <h2 className="text-4xl text-center font-bold mb-10 mt-36">
           Our Gallery ToyZone
         </h2>
-        <p className="text-center">Our Valuable Cars...<progress className="progress w-40 ml-5"></progress></p>
+        <p className="text-center">Our Valuable Cars...<button className="btn btn-xs btn-square loading bg-base-100 border-0"></button></p>
         <OurGallery></OurGallery>
       </div>
 

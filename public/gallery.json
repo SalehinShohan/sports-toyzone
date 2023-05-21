@@ -23,7 +23,8 @@
     {
       "id": 5,
       "name": "Racing Car 9m cc-28",
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjsXoKXUMraF-UR7VgG1kXOxIEc3SlS5gO4Q&usqp=CAU"
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjsXoKXUMraF-UR7VgG1kXOxIEc3SlS5gO4Q&usqp=CAU",
+      "date":"January 1, 2028"
       
     },
     {
@@ -35,13 +36,15 @@
     {
       "id": 7,
       "name": "Army Police 24",
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2F96p6NM7cHYT2btLM4lG4bOx4ywHDMZP-Q&usqp=CAU"
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2F96p6NM7cHYT2btLM4lG4bOx4ywHDMZP-Q&usqp=CAU",
+      "date":"December 1, 2024"
       
     },
     {
       "id": 8,
       "name": "Truck Lori 24",
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG6GmltBJNGbcxfZzUAKjOzhitwmaEQEWW3Q&usqp=CAU"
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG6GmltBJNGbcxfZzUAKjOzhitwmaEQEWW3Q&usqp=CAU",
+      "date":"May 1, 2024"
       
     },
     {
